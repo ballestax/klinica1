@@ -35,7 +35,8 @@ require('conection.php');
               echo "<td>".$row['id_date_person']."</td>";
               echo "<td><a href='show.php?id='".$row['id_date_person']."''>".$row['f_name']." ".$row['s_name']." ".$row['l_name']." ".$row['l_name_s']."</a></td>";
               echo "<td>".$row['date']."</td>";
-              echo "<td><a href='editar.php?id=".$row['id_date_person']."' class='btn btn-primary'>Editar</td>";
+              echo "<td><a href='editar.php?id=".$row['id_date_person']."' class='btn btn-primary'>Editar</a>";
+              echo "<a href='eliminar.php?id=".$row['id_date_person']."' class='btn btn-danger'>Eliminar</a></td>";
               echo "</tr>";
            }
          }

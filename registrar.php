@@ -1,15 +1,8 @@
 <?php
 require('conection.php');
-if(isset($_GET['id']))
+if(isset($_POST['aceptar']))
 {
-
-	$id = $_GET['id'];
-
-	$sql="SELECT FROM date_person WHERE id_date_person=$id";
-
-
-
-/*	$cedula=$_POST['id_date_person'];
+	$cedula=$_POST['id_date_person'];
   $tipo_doc=$_POST['id_type_doc'];
 	$nombre=$_POST['f_name'];
 	$nombre2=$_POST['s_name'];
@@ -25,9 +18,13 @@ if(isset($_GET['id']))
   $ciudad_nac=$_POST['id_city_born'];
   $eps=$_POST['id_eps'];
 	$estrato=$_POST['id_score'];
-	*/
 
-}
+	$sql="INSERT INTO date_person VALUES ($cedula,$tipo_doc,'$nombre','$nombre2','$apellido','$apellido2','$foto','$fecha_nac',$sangre,$genero,$rh,$estado_c,$ciudad_nac,$raza,$eps,$estrato)";
+
+
+	ejecutar($sql);
+
+	}
 ?>
 
 <html lang="es">

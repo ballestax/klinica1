@@ -1,8 +1,15 @@
 <?php
 require('conection.php');
-if(isset($_POST['aceptar']))
+if(isset($_GET['id']))
 {
-	$cedula=$_POST['id_date_person'];
+
+	$id = $_GET['id'];
+
+	$sql="SELECT FROM date_person WHERE id_date_person=$id";
+
+
+
+/*	$cedula=$_POST['id_date_person'];
   $tipo_doc=$_POST['id_type_doc'];
 	$nombre=$_POST['f_name'];
 	$nombre2=$_POST['s_name'];
@@ -18,13 +25,9 @@ if(isset($_POST['aceptar']))
   $ciudad_nac=$_POST['id_city_born'];
   $eps=$_POST['id_eps'];
 	$estrato=$_POST['id_score'];
+	*/
 
-	$sql="INSERT INTO date_person VALUES ($cedula,$tipo_doc,'$nombre','$nombre2','$apellido','$apellido2','$foto','$fecha_nac',$sangre,$genero,$rh,$estado_c,$ciudad_nac,$raza,$eps,$estrato)";
-
-
-	ejecutar($sql);
-
-	}
+}
 ?>
 
 <html lang="es">
@@ -41,9 +44,8 @@ if(isset($_POST['aceptar']))
 
   <div class="card mt-5">
     <div class="card-header">
-      <h4 class="float-left">Registrar Paciente</h4>
-			<div class="float-right">
-        <a href="pacientes.php" class="btn btn-success">Listado</a>
+      <h4 class="float-left">Editar Paciente</h4>
+			<div class="float-right">        
       </div>
     </div>
     <div class="card-body">
